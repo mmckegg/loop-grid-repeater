@@ -1,0 +1,24 @@
+{
+  "name": "loop-grid-repeater",
+  "version": "0.0.0",
+  "description": "A note repeater transform for loop-grid.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mmckegg/loop-grid-repeater.git"
+  },
+  "author": "Matt McKegg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmckegg/loop-grid-repeater/issues"
+  },
+  "homepage": "https://github.com/mmckegg/loop-grid-repeater",
+  "devDependencies": {
+    "array-grid": "^1.4.0",
+    "observ-grid": "^2.8.0",
+    "tape": "^3.0.1"
+  }
+}
