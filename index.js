@@ -22,7 +22,7 @@ module.exports = function(transform){
   repeater.start = function(inputGrabber, length){
     if (!release){
 
-      if (length){
+      if (length != null){
         repeatLength = length
       }
 
@@ -32,7 +32,7 @@ module.exports = function(transform){
       })
 
       refresh()
-    } else if (length){
+    } else if (length != null){
       repeater.setLength(length)
     }
   }
@@ -62,7 +62,7 @@ module.exports = function(transform){
       })
     }
 
-    if (active.length && repeatLength){
+    if (active.length && repeatLength != null){
       releaseTransform = transform(repeat, active, repeatLength)
     }
   }
@@ -72,10 +72,15 @@ module.exports = function(transform){
 
 function repeat(input, active, length){
   active.forEach(function(index){
-    input.data[index] = {
-      events: [[0, length/2]],
-      length: length
+    if (length === 0) { // suppress
+      input.data[index] = null
+    } else {
+      input.data[index] = {
+        events: [[0, length/2]],
+        length: length
+      }
     }
+
   })
   return input
 }
